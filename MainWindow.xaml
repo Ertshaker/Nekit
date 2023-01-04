@@ -4,9 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nekit"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="Deadweight's ToolPack" Height="450" Width="800">
-    <Grid Width="800" HorizontalAlignment="Center" Margin="0,0,0,-6">
-        <Button x:Name="Loser" Command="New" Content="Поменять обои" Margin="329,270,329,121" />
+        Title="Deadweight's ToolPack" Height="400" Width="600" ResizeMode="CanMinimize" StateChanged="Window_StateChanged" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
+
+    <Grid Width="580" HorizontalAlignment="Center" Margin="0,10,0,-6">
+        <tb:TaskbarIcon Visibility="Visible" ToolTipText="Блядемудинный пиздопроёб" IconSource="/Pictures/Joke2.ico" TrayLeftMouseDown="TaskbarIcon_TrayLeftMouseDown" OpacityMask="Black" />
+
+        <Image x:Name="CurrentImage" Width="320" Height="180" Source="/Pictures/TestImage.jpg" Stretch="Fill"/>
+        <Image x:Name="JokeImage" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/Pictures/Joke1.png" Stretch="Fill" Opacity="0"/>
+
+        <Label x:Name="label" Content="Меценат и филантроп: " HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,230" IsEnabled="False" FontSize="14" Foreground="Black" FontWeight="Bold"/>
+        <RadioButton x:Name="DayNightRadioButton" Content="День/ночь" HorizontalAlignment="Left" Margin="372,19,0,0" VerticalAlignment="Top" Checked="DayNightMode_Checked"/>
+        <RadioButton x:Name="NormalRadioButton" Content="Обычный" HorizontalAlignment="Left" Margin="130,19,0,0" VerticalAlignment="Top" Checked="NormalMode_Checked"/>
+
+        <Button x:Name="Settings" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Height="50" Click="Settings_Click" Background="Black">
+            <Button.OpacityMask>
+                <ImageBrush ImageSource="/Pictures/settings_icon.png" Stretch="Uniform"/>
+            </Button.OpacityMask>
+        </Button>
+        <Button x:Name="Menu" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" OpacityMask="Black" Click="Menu_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Pictures/Menu_Icon.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="StartButton" Content="Начать" HorizontalAlignment="Left" Margin="188,306,0,0" VerticalAlignment="Top" Width="94" Height="35" Click="Change_Click" Background="White"/>
+        <Button x:Name="StopButton" Content="Остановить" HorizontalAlignment="Left" Margin="299,306,0,0" VerticalAlignment="Top" Width="94" Height="35" Click="Stop_Click" Background="White" IsEnabled="False"/>
+        <Button Content="Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Opacity="0" Click="Button_Click"/>
     </Grid>
 </Window>

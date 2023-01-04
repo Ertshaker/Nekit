@@ -2,9 +2,49 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <FileVersion>1.2</FileVersion>
+    <ApplicationIcon>Pictures\MainIco (1).ico</ApplicationIcon>
+    <Version>1.2</Version>
+    <AssemblyVersion>1.2</AssemblyVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Joke1.png" />
+    <None Remove="Joke2.ico" />
+    <None Remove="MainIco.ico" />
+    <None Remove="Menu_Icon.png" />
+    <None Remove="settings_icon.png" />
+    <None Remove="TestImage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pictures\MainIco (1).ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pictures\Joke1.png">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Joke2.ico" />
+    <Resource Include="Pictures\MainIco.ico" />
+    <Resource Include="Pictures\Menu_Icon.png" />
+    <Resource Include="Pictures\settings_icon.png" />
+    <Resource Include="Pictures\TestImage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net6.0-windows8.0\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
